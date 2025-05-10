@@ -10,14 +10,16 @@ local function attach(opts)
 end
 
 return {
-	"mason-org/mason-lspconfig.nvim",
+	"neovim/nvim-lspconfig",
 	dependencies = {
 		"mason-org/mason.nvim",
-		"neovim/nvim-lspconfig",
+		"mason-org/mason-lspconfig.nvim",
 	},
 
 	config = function()
 		require("mason").setup()
-		require("mason-lspconfig").setup()
+		require("mason-lspconfig").setup({
+			ensure_installed = { "lua_ls", "ts_ls" }
+		)
 	end
 }
