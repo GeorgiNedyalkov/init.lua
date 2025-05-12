@@ -13,7 +13,7 @@ autocmd("TextYankPost", {
 	desc = "Highlight when yanking text ",
 	callback = function()
 		vim.highlight.on_yank()
-	end
+	end,
 })
 
 autocmd('LspAttach', {
